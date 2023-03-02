@@ -1,16 +1,24 @@
-import { rpsls } from 'node-rpsls'
+#!/usr/bin/env node
 
-no arg
+import minimist from 'minimist';
+import { rpsls } from "/lib/rpsls.js";
 
-single play shot
+const args = minimist(process.argv.slice(2));
 
-unlabeled arg
+// if no argument supplied
 
-results of game
+if (args._.length = 0) {
+	console.log(JSON.stringify(rpsls()));
+	process.exit(0);
+}
 
--h
+// if unlabeled argument supplied
 
-Usage: node-rpsls [SHOT]
+if (rpsls.args._[0] == undefined) {
+	console.log(JSON.stringify(rpsls(args._[0])));
+	process.exit(0);
+} else {
+	console.log(`Usage: node-rpsls [SHOT]
 Play the Lizard-Spock Expansion of Rock Paper Scissors (RPSLS)!
 
   -h, --help        display this help message and exit
@@ -20,11 +28,9 @@ Examples:
   node-rpsls        Return JSON with single player RPSLS result.
                     e.g. {"player":"rock"}
   node-rpsls rock   Return JSON with results for RPSLS played against a simulated opponent.
-                    e.g {"player":"rock","opponent":"Spock","result":"lose"}
+                    e.g {"player":"rock","opponent":"Spock","result":"lose"}`);
 
--r
-
-Rules for the Lizard-Spock Espansion of Rock Paper Scissors:
+	console.log(`Rules for the Lizard-Spock Espansion of Rock Paper Scissors:
 
   - Scissors CUTS Paper
   - Paper COVERS Rock
@@ -35,13 +41,15 @@ Rules for the Lizard-Spock Espansion of Rock Paper Scissors:
   - Lizard EATS Paper
   - Paper DISPROVES Spock
   - Spock VAPORIZES Rock
-  - Rock CRUSHES Scissors
+  - Rock CRUSHES Scissors - Scissors CUTS Paper
+  - Paper COVERS Rock
+  - Rock CRUSHES Scissors`);
+}
 
-unlabeled arg
+// help message
 
-out of range error
-
-Usage: node-rpsls [SHOT]
+if (args = 'help') {
+	console.log(`Usage: node-rpsls [SHOT]
 Play the Lizard-Spock Expansion of Rock Paper Scissors (RPSLS)!
 
   -h, --help        display this help message and exit
@@ -51,9 +59,12 @@ Examples:
   node-rpsls        Return JSON with single player RPSLS result.
                     e.g. {"player":"rock"}
   node-rpsls rock   Return JSON with results for RPSLS played against a simulated opponent.
-                    e.g {"player":"rock","opponent":"Spock","result":"lose"}
+                    e.g {"player":"rock","opponent":"Spock","result":"lose"}`);
 
-Rules for the Lizard-Spock Espansion of Rock Paper Scissors:
+// rules message
+
+if (args = 'rules') {
+	console.log(`Rules for the Lizard-Spock Espansion of Rock Paper Scissors:
 
   - Scissors CUTS Paper
   - Paper COVERS Rock
@@ -64,5 +75,6 @@ Rules for the Lizard-Spock Espansion of Rock Paper Scissors:
   - Lizard EATS Paper
   - Paper DISPROVES Spock
   - Spock VAPORIZES Rock
-  - Rock CRUSHES Scissors
+  - Rock CRUSHES Scissors`);
+}
 
