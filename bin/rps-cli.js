@@ -15,8 +15,8 @@ if (args._.length = 0) {
 }
 
 // if unlabeled argument supplied
-
-if (rps(args._[0] == undefined)) {
+let result = rps(args._[0]);
+if (result == undefined) {
         console.error('Out of range');
         console.log(
                 `Usage: node-rps [SHOT]
@@ -39,7 +39,7 @@ if (rps(args._[0] == undefined)) {
                 - Rock CRUSHES Scissors`);
         process.exit(0);
 } else {
-        console.log(JSON.stringify(rps(args._[0])));
+        console.log(JSON.stringify(result));
         process.exit(0);
 }
 
@@ -71,3 +71,4 @@ if (args.r || args.rules) {
                 - Rock CRUSHES Scissors`);
         process.exit(0);
 }
+

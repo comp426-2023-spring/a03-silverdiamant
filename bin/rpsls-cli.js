@@ -14,7 +14,9 @@ if (args._.length = 0) {
 
 // if unlabeled argument supplied
 
-if (rpsls.args._[0] == undefined) {
+let result = rpsls(args._[0]);
+if (result == undefined) {
+        console.error('Out of range');
         console.log(
                 `Usage: node-rpsls [SHOT]
                 Play the Lizard-Spock Expansion of Rock Paper Scissors (RPSLS)!
@@ -45,7 +47,7 @@ if (rpsls.args._[0] == undefined) {
             - Rock CRUSHES Scissors`);
         process.exit(0);
 } else {
-        console.log(JSON.stringify(rpsls.args._[0]));
+        console.log(JSON.stringify(result));
         process.exit(0);
 }
 
