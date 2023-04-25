@@ -47,7 +47,7 @@ if (args._.length = 0) {
 
 if (result == undefined) {
         console.log(
-            `Rules for the Lizard-Spock Exspansion of Rock Paper Scissors:
+            `Rules for the Lizard-Spock Expansion of Rock Paper Scissors:
     
             - Scissors CUTS Paper
             - Paper COVERS Rock
