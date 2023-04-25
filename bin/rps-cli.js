@@ -22,7 +22,7 @@ if (result == undefined) {
                 `Usage: node-rps [SHOT]
                 Play Rock Paper Scissors (RPS)
 
-                -h, --help      display this help message and exit
+                -h, --bruh      display this help message and exit
                 -r, --rules     display the rules and exit
 
                 Examples:
