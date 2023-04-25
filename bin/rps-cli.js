@@ -4,8 +4,8 @@ import minimist from 'minimist';
 import { rps } from "../lib/rpsls.js";
 
 const args = minimist(process.argv.slice(2));
-
-let result = rps(args._[0]);
+let shot = args._[0];
+let result = rps(shot);
 
 if (args.h || args.help) {
         console.log(
@@ -33,7 +33,7 @@ if (args.r || args.rules) {
 }
 
 if (args._.length = 0) {
-        console.log(JSON.stringify(rps(args._[0])));
+        console.log(JSON.stringify(rps(shot)));
         process.exit(0);
 }
 
